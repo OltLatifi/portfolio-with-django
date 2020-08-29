@@ -1,0 +1,52 @@
+{% extends "Web/base.html" %}
+
+
+{% load static %}
+
+
+
+
+{% block content %}
+
+<br>
+<div class="crud-container" style="border-top-right-radius: 1rem; border-top-left-radius: 1rem;">
+	<h1 style="color: #2C3E47;">
+		{{object.Name}}
+	</h1>
+</div>
+
+<div class="crud-container" style="border-bottom-right-radius: 1rem; border-bottom-left-radius: 1rem;">
+	
+
+
+
+
+
+
+	<div class="crud-flex">
+		<p style="color: #2C3E47;">Update or Delete</p>
+
+
+		<!-- buttons with a link -->
+			<form action="{% url 'Crud-lang-update' pk=languages.pk %}">
+				<input type="submit" value="Update" class="crud-button"/>
+			</form>
+
+			<form action="{% url 'Crud-lang-delete' pk=languages.pk %}">
+				<input type="submit" value="Delete" class="crud-button"/>
+			</form>
+
+	</div>
+	<div class = "crud-flex" style="margin-left: 20%;">
+		<p style="color: #2C3E47;">Add something</p>
+		<form action="{% url 'Crud' %}">
+				<input type="submit" value="Add language" class="crud-button"/>
+		</form>
+		<form action="{% url 'CrudT' %}">
+				<input type="submit" value="Add technology" class="crud-button"/>
+		</form>
+	</div>
+
+</div>
+
+{% endblock content %}

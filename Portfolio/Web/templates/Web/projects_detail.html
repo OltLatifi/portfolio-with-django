@@ -1,0 +1,31 @@
+{% extends "Web/base.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+<div class="details-cont">
+	<h1 class="black-text">{{object.Name}}</h1>
+		<div style="width: 70%;">
+			<h3 class="black-text">{{object.Description}}</h3>
+		</div>
+	<h4 class="black-text">{{object.Link|urlizetrunc:25}}<span class="fa fa-github"></span></h4>
+
+	<!-- buttons for the superuser -->
+
+	{% if user.is_authenticated %}
+	<div>
+		<form action="{% url 'Projects-update' pk=projects.pk %}">
+			<input type="submit" value="Update" class="crud-button"/>
+		</form>
+		<form action="{% url 'Projects-delete' pk=projects.pk %}">
+			<input type="submit" value="Delete" class="crud-button"/>
+		</form>
+		<form action="{% url 'Projects-add'%}">
+			<input type="submit" value="Add project" class="crud-button"/>
+		</form>
+	</div>
+	{% endif %}
+</div>
+{% endblock content %}

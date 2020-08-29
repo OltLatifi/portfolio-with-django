@@ -1,0 +1,29 @@
+{% extends "Web/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<center>
+
+  <div class="form-text">
+      <h1>
+        Please make the required changes
+      </h1>
+  </div>
+  <br>
+    <article>
+      <form  method="POST" enctype="multipart/form-data" class="form" style="width: 50%;">
+        {% csrf_token %}
+        {{form|crispy}}
+
+        <button class="Mybutton" type="submit" style="width: 100%;">Submit!</button>
+      
+      </form>
+
+    </article>
+      
+
+    
+</center>
+{% endblock content %}

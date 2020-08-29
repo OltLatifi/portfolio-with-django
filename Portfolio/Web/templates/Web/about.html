@@ -1,0 +1,17 @@
+{% extends "Web/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+	{% for i in about %}
+		<div class="text-cont">
+			<div style="width: 80%; margins: 5% auto;">
+				<h3 style="color: black;">{{i.Content}}</h3>
+			</div>
+		</div>
+		
+	{% endfor %}
+
+
+
+{% endblock content %}

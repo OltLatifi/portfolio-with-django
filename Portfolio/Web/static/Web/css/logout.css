@@ -1,0 +1,12 @@
+.box{
+	background-color: white;
+	padding: 2%;
+	margin: 10% 25%;
+	width: calc(100% / 2)
+
+}
+
+
+.box-text {
+	color: #2C3E47;
+}

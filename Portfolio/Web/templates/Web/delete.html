@@ -1,0 +1,25 @@
+{% extends "Web/base.html" %}
+
+
+{% load static %}
+
+
+
+
+{% block content %}
+
+<form method="POST">
+	{% csrf_token %}
+	<div>
+		<h1 style="margin-top: 10%;">Are you sure you want to delete "{{object.Text}}"</h1>
+
+		<div class="crud-flex" style="width: 60%; flex-direction: row;">
+			<input type="submit" value="Yes, I'm sure" class="crud-button" style="width: 45%; margin-right: 5%;">
+
+
+			<a href="{% url 'Home' %}" class="crud-button" style="width: 45%;  margin-left: 5%;">Cancel</a>
+		</div>
+	</div>
+</form>
+
+{% endblock content %}

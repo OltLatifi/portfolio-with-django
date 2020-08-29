@@ -1,0 +1,45 @@
+{% extends "Web/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<style type="text/css">
+  .form input{
+      width: 120%;
+      height: 30px;
+      margin: 1% -10%;
+    }
+
+  .form li{
+      width: 120%;
+      margin: 5% -10%;
+    }
+</style>
+
+
+
+<br><br>
+<div class="form-text">
+    <h1>
+      Please prove that you're the developer
+    </h1>
+</div>
+<br>
+
+  <article class="form-border" style="width: 50%;">
+    <form  method="POST" enctype="multipart/form-data" class="form">
+      {% csrf_token %}
+
+
+        {{form|crispy}}
+      {{captcha}}
+      <button class="Mybutton" type="submit" style="width: 120%; margin: 2% -10%;">Log in!</button>
+    
+    </form>
+  
+  </article>
+      
+
+    
+{% endblock content %}

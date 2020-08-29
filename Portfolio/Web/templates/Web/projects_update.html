@@ -1,0 +1,50 @@
+{% extends "Web/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<head>
+  <style type="text/css">
+    textarea {
+
+      width: 100%;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      resize: none;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+    }
+
+  </style>
+</head>
+
+<center>
+
+  <br>
+  <div class="form-text">
+      <h1>
+        Please add a project you've made
+      </h1>
+  
+  <br>
+    <article>
+      <form  method="POST" enctype="multipart/form-data" class="form" style="width: 50%;">
+        {% csrf_token %}
+        {{form|crispy}}
+
+        <br>
+        <button class="Mybutton" type="submit" style="width: 100%;">Submit!</button>
+      
+      </form>
+
+    </article>
+  </div>
+
+    
+</center>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "Web/base.html" %}
+
+
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+
+<div class="box">
+	<h1 class="box-text">You're logged out.</h1>
+	<h2 class="box-text">Thanks for keeping this site alive!</h2>
+	<a class="box-text" href="{% url 'Login' %}">Log in again</a>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "Web/base.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="holder">
+	
+	{% for i in projects %}
+		<a href="{% url 'Projects' i.id %}">
+			<div class="projects-cont">
+				<h2 class="black-text">{{i.Text|title}}</h2>
+				<span class="black-text">{{i.Description|truncatechars:40}}</span>
+				<h4 class="black-text">{{i.Link|urlizetrunc:15}}<span class="fa fa-github"></span></h4>
+			</div>
+		</a>
+
+	
+	{% endfor %}
+</div>
+<br><br>
+
+{% endblock content %}

@@ -1,0 +1,79 @@
+
+{% load static %}
+
+<head>
+	<link rel="stylesheet" href="{% static 'Web/css/allcss.css' %}">
+	<link rel="stylesheet" href="{% static 'Web/css/crud.css' %}">
+	<link rel="stylesheet" href="{% static 'Web/css/logout.css' %}">
+	<link rel="stylesheet" href="{% static 'Web/css/projects.css' %}">
+	<link rel="stylesheet" href="{% static 'Web/css/about.css' %}">
+	<link rel="stylesheet" href="{% static 'Web/css/contact.css' %}">
+
+	
+	<script type="text/javascript" src = "{% static 'Web/js/jquery-3.5.1.js' %}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<style>
+		body {
+			background-image: url({% static 'Web/images/g1530.png' %});
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 100% 100%;
+			
+		}
+
+	</style>
+
+</head>
+
+
+
+<center>
+	<ul style="font-family: 'Arial', Monaco, monospace;" class="nav-bar">
+		<li style="display: inline;"><a href="{% url 'Home' %}" class="navbar-text">Home</a></li>
+		<li style="display: inline;"><a href="{% url 'Projects' %}" class="navbar-text">Projects</a></li>
+		<li style="display: inline;"><a href="{% url 'About' %}" class="navbar-text">About</a></li>
+		<li style="display: inline;"><a href="{% url 'Contact' %}" class="navbar-text">Contact</a></li>
+		{% if user.is_authenticated %}
+			<li style="display: inline;"><a href="{% url 'Logout' %}" class="navbar-text">LogOut</a></li>
+		{% endif %}
+	</ul>
+
+
+	{% block content %} {% endblock %}
+</center>
+
+
+
+
+<br>
+<footer class="footer">
+	<div class="child-footer">
+		<img src="{% static 'Web/images/logo.png' %}" class="logo">
+			<a href="https://www.instagram.com/olt_latifi/" class="fa fa-instagram" target="_blank"></a>
+			<a href="https://twitter.com/olt_latifi" class="fa fa-twitter" target="_blank"></a>
+			<a href="https://www.youtube.com/channel/UCh0ONKKlomGvgnh-4YygcBA" class="fa fa-youtube" target="_blank"></a>
+			<a href="https://github.com/OltLatifi" class="fa fa-github" target="_blank"></a>
+			<a href="{% static 'Web/images/snapcode.png' %}" class="fa fa-snapchat" target="_blank"></a>
+			<a href="https://www.facebook.com/olt.latifi/" class="fa fa-facebook" target="_blank"></a>
+	</div>
+
+	<div class="child-footer">
+		<p>Have a question?</p>
+		<p>For any questions you might have, please reach out through my number, email or social media. You know my name.</p>
+	</div>
+
+	<div class="child-footer">
+		<p>If you're Olt Latifi</p>
+		<p>Olt Latifi or anyone supervised by him can make changes to the website, by logging in as the {% if not user.is_authenticated %}<a href="{% url 'Login' %}">{% endif %}Superuser</a>.</p>
+
+	</div>
+
+	<div class="child-footer">
+		<p>OltLatifi © Copyright</p>
+		<p>+383 49 228-059<br>oltlatifi2003@gmail.com</p>
+
+	</div>
+
+</footer>

@@ -1,0 +1,130 @@
+{% extends "Web/base.html" %}
+
+
+{% load static %}
+
+<center>
+
+
+{% block content %}
+<h1 style="margin-top: 1.5em; font-size: 7em;">Olt Latifi</h1>
+
+<p style="font-size: 1.5rem; margin-top: -3rem;">Web-dev, game-dev, automation and data science</p>
+<br>
+
+<!-- <button class="button-contact" href="{% url 'Contact' %}">Contact me</button> -->
+
+<form   action="{% url 'Contact'%}">
+	<input type="submit" value="Contact me" class="button-contact"/>
+</form>
+
+
+<!-- flexbox div -->
+<div class="table-top"> 
+	<h2 class="table-text" style="margin-right: 10%;">Front-end</h2>
+
+
+	<div class="diamond">
+		<img src="{% static 'Web/images/laptop.png' %}" class="laptop">
+	</div>
+
+
+	<h2 class="table-text" style="margin-left: 10%;">Back-end</h2>
+</div>
+</center>
+
+
+
+<!-- the text chart -->
+<div class="table-chart">
+	<div style="width: 50%;height:100%; border-right: solid gray 2px;">
+
+		<ul>
+
+
+			{% for i in frontend %}
+				<li style="margin-top: 3rem;">
+					{% if i.Editor == user %}
+						<a href="{% url 'Skills' i.id %}" class="plain-text">
+					{% endif %}
+						{{i.Text}}
+						</a>
+				</li>
+			{% endfor %}
+			
+		</ul>
+
+	</div>
+
+	<div style="width: 50%;height:100%;">
+
+		<ul>
+
+			{% for i in backend %}
+				<li style="margin-top: 3rem;">
+					{% if i.Editor == user %}
+						<a href="{% url 'Skills' i.id %}" class="plain-text">
+					{% endif %}
+						{{i.Text}}
+					</a>
+				</li>
+			{% endfor %}
+			
+		</ul>
+		
+	</div>
+</div>
+
+
+<!-- game dev -->
+<div class="gaming-flex" style="opacity: 0.8;">
+
+	<div class="diamondG"><p id="game-text">Experience with Unity</p></div>
+
+		{% if user.is_authenticated %}
+			<a href="{% url 'Crud'%}">
+		{% endif %}
+			<div class="diamondG" style="margin-top: 6rem;">
+				<img src="{% static 'Web/images/controller.png' %}" class="controller">
+			</div>
+		</a>
+
+
+	<div class="diamondG"><p id="game-text">Passionate drawer</p></div>
+
+</div>
+
+<center>
+
+	<div style="display: flex; flex-direction: column; background-color: #7B8186; opacity: 0.8;">
+
+	<h1>Things I've had the opportunity to work with:</h1>
+
+		{% for i in languages %}
+		<div style="display: inline;" id="tech-overflow">
+			{% if i.Editor == user %}
+				<a href="{% url 'Crud-lang' i.id %}">
+			{% endif %}
+
+
+
+
+			<h1>{{i}}</h1></a>
+			{% for j in tech %}
+				{% if j.Language == i %}
+					{% if i.Editor == user %}
+						<a href="{% url 'Crud-tech' j.id %}">
+					{% endif %}
+					<h2>- {{j}}</h2></a>
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
+	</div>
+
+
+
+
+</center>
+
+{% endblock %}
+

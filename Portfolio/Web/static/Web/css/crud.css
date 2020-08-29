@@ -1,0 +1,58 @@
+
+
+select {
+	display: block;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #444;
+	line-height: 1.3;
+	width: 100%;
+	height: 30px;
+/*	margin-bottom: -20%;*/
+
+}
+
+textarea {
+
+	/*height: 150px;*/
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	resize: none;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+
+
+
+.form{
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+
+}
+
+.form input{
+	width: 90%;
+	height: 30px;
+	margin: 2% 0;
+}
+
+
+.form label{
+	visibility: visible;
+	color: white;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.form-border{
+	border: 2px solid #ccc;
+	border-radius: 4px;
+}

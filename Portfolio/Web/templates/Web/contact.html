@@ -1,0 +1,25 @@
+{% extends "Web/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div>
+<form method="POST">
+	<br><br><br>
+	{% if name %}
+		<h2>I've received your email. Thanks for reaching out!</h2>
+	{% else %}
+		<h2>Send me an email :)</h2>
+	{% endif %}
+	{% csrf_token %}
+	<input type="text" name="Name" placeholder="Name" class="input">
+	<input type="text" name="Email" placeholder="Email" class="input">
+
+	<textarea type="text" name="Message" placeholder="Message" class="textarea1" rows="10"></textarea>
+	{{captcha}}
+	<button class="TheirButton" type="submit">Submit</button>
+</form>
+</div>
+<br>
+{% endblock content %}
+
