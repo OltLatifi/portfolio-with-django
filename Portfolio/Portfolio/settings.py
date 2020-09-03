@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(7xr9_x3sm^^mps!3$8j9*4^(!&e51=8zgb%wsm9738$c%(c!c'
+SECRET_KEY = 'secret_key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -137,14 +137,14 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 
-EMAIL_HOST_USER = 'oltlatifi2003@gmail.com'
-EMAIL_HOST_PASSWORD = 'Fuckinhell123'
+EMAIL_HOST_USER = 'oltlatifi2003@company.com'
+EMAIL_HOST_PASSWORD = '************'
 
 
 # captcha
 
 
-RECAPTCHA_PUBLIC_KEY = '6LesosAZAAAAALFnKdhhrqsbzm2gygblEstuH1TU'
-RECAPTCHA_PRIVATE_KEY = '6LesosAZAAAAAO68wXjr1LbsnVKc-N8_9Amp9epr'
+RECAPTCHA_PUBLIC_KEY = 'public_key'
+RECAPTCHA_PRIVATE_KEY = 'secret_key'
 
 RECAPTCHA_DOMAIN = 'www.recaptcha.net'
