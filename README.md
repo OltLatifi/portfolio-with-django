@@ -1,2 +1,2 @@
 # portfolio-with-django
- My very own portfolio
+I finally have a portfolio and a website that's alive in the web. Here's the link: www.oltlatifi.pythonanywhere.com
