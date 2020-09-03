@@ -4,7 +4,7 @@ from Web.views import home_view, projects_view, about_view, contact_view
 from django.contrib.auth import views as user_views
 
 from Web import views as Views
-from Web.models import skills, languages, technologies, projects
+from Web.models import skills, languages, technologies, projects, about 
 
 
 # for static images
@@ -38,5 +38,8 @@ urlpatterns = [
 	path('projects/<int:pk>/update', Views.projects_update.as_view(model = projects), name = 'Projects-update'),
 	path('projects/<int:pk>/delete', Views.projects_delete.as_view(model = projects), name = 'Projects-delete'),
 
+	path('about/<int:pk>', Views.about_detail.as_view(model = about), name = 'About-det'),
+	path('about/<int:pk>/update', Views.about_update.as_view(model = about), name = 'About-update'),
+	path('about/<int:pk>/delete', Views.about_delete.as_view(model = about), name = 'About-delete'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

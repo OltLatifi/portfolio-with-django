@@ -231,3 +231,29 @@ def add_projects(request):
 	return render(request, 'Web/projects_update.html', {'form': form})
 
 
+
+
+class about_detail(DetailView):
+	model = about
+
+
+
+class about_update(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+	model = about
+	template_name = 'Web/change_skills.html'
+	fields = ['Content']
+	success_url = '/about'
+
+	def test_func(self):
+		thing = self.get_object()
+		return self.request.user == thing.Editor
+
+
+class about_delete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+	model = about
+	template_name = 'Web/delete.html'
+	success_url = '/about'
+
+	def test_func(self):
+		projects = self.get_object()
+		return self.request.user == projects.Editor

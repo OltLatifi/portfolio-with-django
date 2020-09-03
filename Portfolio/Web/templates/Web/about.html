@@ -5,9 +5,13 @@
 
 	{% for i in about %}
 		<div class="text-cont">
-			<div style="width: 80%; margins: 5% auto;">
-				<h3 style="color: black;">{{i.Content}}</h3>
-			</div>
+			{% if i.Editor == user %}
+				<a href="{% url 'About-det' i.id %}">
+			{% endif %}
+					<div style="width: 80%; margins: 5% auto;">
+						<h3 style="color: black;">{{i.Content}}</h3>
+					</div>
+				</a>
 		</div>
 		
 	{% endfor %}

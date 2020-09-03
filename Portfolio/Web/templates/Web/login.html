@@ -17,24 +17,24 @@
     }
 </style>
 
-
+ 
 
 <br><br>
-<div class="form-text">
+<div class="form-text show-on-scroll">
     <h1>
       Please prove that you're the developer
     </h1>
 </div>
 <br>
 
-  <article class="form-border" style="width: 50%;">
+  <article class="form-border show-on-scrollr" style="width: 50%;">
     <form  method="POST" enctype="multipart/form-data" class="form">
       {% csrf_token %}
 
 
         {{form|crispy}}
       {{captcha}}
-      <button class="Mybutton" type="submit" style="width: 120%; margin: 2% -10%;">Log in!</button>
+      <button class="Mybutton show-on-scroll" type="submit" style="width: 120%; margin: 2% -10%;">Log in!</button>
     
     </form>
   

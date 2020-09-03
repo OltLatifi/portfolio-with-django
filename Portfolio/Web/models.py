@@ -62,3 +62,7 @@ class projects(models.Model):
 class about(models.Model):
 	Editor = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 	Content = models.TextField(max_length=5000)
+
+
+	def get_absolute_url(self):
+		return reverse('about', kwargs={'pk': self.pk})
